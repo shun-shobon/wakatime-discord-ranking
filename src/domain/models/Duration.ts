@@ -19,6 +19,10 @@ class Duration {
   get secs(): number {
     return (this._secs % SECS_PER_HOUR) % SECS_PER_MINUTE;
   }
+
+  add(duration: Duration): Duration {
+    return new Duration(this._secs + duration._secs);
+  }
 }
 
 export default Duration;

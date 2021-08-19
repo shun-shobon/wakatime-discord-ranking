@@ -15,3 +15,13 @@ Deno.test("Duration_hours", () => {
   const duration = new Duration(5000);
   assertEquals(duration.hours, 1);
 });
+
+Deno.test("Duration_add", () => {
+  const duration1 = new Duration(50);
+  const duration2 = new Duration(100);
+
+  const duration3 = duration1.add(duration2);
+  assertEquals(duration3.hours, 0);
+  assertEquals(duration3.minutes, 2);
+  assertEquals(duration3.secs, 30);
+});
